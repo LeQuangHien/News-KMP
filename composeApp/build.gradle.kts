@@ -48,6 +48,12 @@ kotlin {
     }
 
     sourceSets {
+        all {
+            languageSettings {
+                optIn("androidx.compose.material3.ExperimentalMaterial3Api")
+                optIn("org.jetbrains.compose.resources.ExperimentalResourceApi")
+            }
+        }
         val commonMain by getting {
             dependencies {
                 implementation(compose.runtime)
@@ -59,6 +65,8 @@ kotlin {
 
                 implementation(libs.androidx.lifecycle.viewmodel.compose)
                 implementation(libs.androidx.navigation.compose)
+
+                implementation(libs.compose.material3)
             }
         }
 
@@ -85,7 +93,7 @@ kotlin {
         }
 
         val wasmJsMain by getting {
-            
+
         }
     }
 }

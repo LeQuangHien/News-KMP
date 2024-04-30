@@ -16,6 +16,7 @@ compose = "1.6.6"
 compose-multiplatform = "1.6.10-beta02"
 junit = "4.13.2"
 kotlin = "1.9.23"
+material3 = "1.6.2"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -32,6 +33,8 @@ androidx-lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecy
 androidx-navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "androidx-navigation" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+
+compose-material3 = { group = "org.jetbrains.compose.material3", name = "material3", version.ref = "material3" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
