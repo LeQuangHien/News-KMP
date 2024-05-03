@@ -9,6 +9,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -17,6 +18,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.hienle.cleanarchitecture.feature.news.article.NewsScreen
+import net.thauvin.erik.urlencoder.UrlEncoderUtil
 import newskmm.composeapp.generated.resources.*
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
@@ -94,7 +96,8 @@ fun CaApp(navController: NavHostController = rememberNavController()) {
             composable(route = CaScreen.Start.name) {
                 NewsScreen(
                     onArticleClicked = { url ->
-                        navController.navigate(CaScreen.Favorites.name)
+                        val encodedUrl = UrlEncoderUtil.encode(url)
+                        navController.navigate("${CaScreen.Details.name}/$encodedUrl")
                     },
                     modifier =
                     Modifier.fillMaxHeight()
@@ -105,7 +108,7 @@ fun CaApp(navController: NavHostController = rememberNavController()) {
                 arguments = listOf(navArgument("url") { type = NavType.StringType }),
             ) {
                 val url = backStackEntry?.arguments?.getString("url") ?: ""
-                FavoritesScreen()
+                WebViewScreen(url)
             }
             composable(route = CaScreen.Favorites.name) {
                 FavoritesScreen()
@@ -120,3 +123,15 @@ fun FavoritesScreen() {
         Text(text = "My Favorites")
     }
 }
+
+@Composable
+fun WebViewScreen(
+    url: String,
+    modifier: Modifier = Modifier,
+) {
+    Surface(modifier = modifier.padding(24.dp)) {
+        Text(text = url)
+    }
+}
+
+

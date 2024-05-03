@@ -67,6 +67,7 @@ kotlin {
                 implementation(libs.androidx.navigation.compose)
 
                 implementation(libs.compose.material3)
+                implementation(libs.urlencoder)
             }
         }
 
