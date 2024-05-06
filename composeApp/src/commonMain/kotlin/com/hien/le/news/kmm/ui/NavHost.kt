@@ -110,17 +110,7 @@ fun CaApp(navController: NavHostController = rememberNavController()) {
                 val url = backStackEntry?.arguments?.getString("url") ?: ""
                 WebViewScreen(url)
             }
-            composable(route = CaScreen.Favorites.name) {
-                FavoritesScreen()
-            }
         }
-    }
-}
-
-@Composable
-fun FavoritesScreen() {
-    Surface {
-        Text(text = "My Favorites")
     }
 }
 
