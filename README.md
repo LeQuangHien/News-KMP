@@ -1,22 +1,40 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
+# Kotlin Multiplatform (KMP) - Shared Logic and UI
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
+![GitHub repo size](https://img.shields.io/github/repo-size/LeQuangHien/News-KMP)
+![GitHub contributors](https://img.shields.io/github/contributors/LeQuangHien/News-KMP)
+![GitHub stars](https://img.shields.io/github/stars/LeQuangHien/News-KMP?style=social)
+![GitHub forks](https://img.shields.io/github/forks/LeQuangHien/News-KMP?style=social)
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+This Kotlin Multiplatform (KMP) project allows the sharing of both logic and UI. The UI is built entirely with Compose Multiplatform. Key technologies include the Lifecycle library with common ViewModels and experimental navigation library.
+## Features
+
+- Business logic sharing between Android and iOS, Web, and Desktop apps.
+- Same UI with Compose Multiplatform.
+- Common ViewModels.
+- Navigation in Compose.
 
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
+## Installation
 
-**Note:** Compose/Web is Experimental and may be changed at any time. Use it only for evaluation purposes.
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
+1. Clone this repository.
+2. Open the project in Android Studio.
+3. Build and run the project on an Android emulator or physical device, or an iOS simulator or physical device.
 
-You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
+## Usage
+
+- Develop and maintain shared business logic and UI in the `commonMain` module.
+- Utilize shared ViewModels for common logic.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit pull requests or open issues for any bugs or feature requests.
+
+## License
+
+This project is licensed under the Apache-2.0 License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- [Compose Multiplatform](https://www.jetbrains.com/compose-multiplatform/)
+- [Common ViewModel](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-viewmodel.html)
+- [Compose Navigation](https://www.jetbrains.com/help/kotlin-multiplatform-dev/compose-navigation-routing.html)
