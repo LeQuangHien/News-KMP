@@ -1,4 +1,4 @@
-# Kotlin Multiplatform (KMP) - Shared Logic and UI
+# Kotlin Multiplatform (KMP) - Shared 100% Logic and UI
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/LeQuangHien/News-KMP)
 ![GitHub contributors](https://img.shields.io/github/contributors/LeQuangHien/News-KMP)
